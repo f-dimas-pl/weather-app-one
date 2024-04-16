@@ -57,11 +57,11 @@ async function getWeather (lat, lon) {
 
 function renderWeatherData (data) {
 	const weatherInfo = document.querySelector('.weather__info');
-	weatherInfo.classList.remove('none');
+	// weatherInfo.classList.remove('none');
 	weatherInfo.style.cssText = 'margin-top: 50px;';
 
-	const weatherDetails = document.querySelector('.weather__details');
-	weatherDetails.classList.remove('none');
+	// const weatherDetails = document.querySelector('.weather__details');
+	// weatherDetails.classList.remove('none');
 	
 	const temp = document.querySelector('.weather__temp');
 	const city = document.querySelector('.weather__city');
