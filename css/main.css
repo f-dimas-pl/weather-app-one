@@ -1,0 +1,260 @@
+/* @import './reset.css'; */
+:root {
+	--white: #fff;
+	--gradient: linear-gradient(207deg, #3489ff 0%, #3489ff 100%);;
+	--gradientTwo: linear-gradient(207deg, #ffd600 0%, #f00 100%);
+	--accent: #002c5f;
+	--transition: all .3s ease-in-out;
+}
+
+.none {
+	display: none !important;
+}
+
+body {
+	min-height: 100svh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	font-family: 'Montserrat', sans-serif;
+	transition: var(--transition);
+	overflow-x: hidden;
+	position: relative;
+	overflow: hidden;
+}
+
+body::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-image: url('../img/background.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	animation-name: bodyBackground;
+	animation-iteration-count: infinite;
+	animation-duration: 20s;
+}
+
+@keyframes bodyBackground {
+	0% {
+		scale: 1.5;
+	}
+
+	50% {
+		scale: 1;
+	}
+
+	100% {
+		scale: 1.5;
+	}
+}
+
+.weather {
+	background: var(--gradient);
+	border-radius: 30px;
+	width: 450px;
+	display: flex;
+	flex-direction: column;
+	transition: var(--transition);
+	cursor: pointer;
+	padding: 20px;
+
+	backdrop-filter: blur(12px) !important;
+	background: linear-gradient(207deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%) !important;
+
+	/* Анимация */
+	animation-name: weatherWrapper;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes weatherWrapper {
+	0% {
+		transform: translateY(20px)
+	}
+
+	50% {
+		transform: translateY(-20px)
+	}
+
+	100% {
+		transform: translateY(20px)
+	}
+}
+
+.form {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: var(--white);
+	border-radius: 30px;
+	padding: 14px 18px;
+}
+
+.form__input {
+	width: 100%;
+	font-weight: 600;
+	&::placeholder {
+		color: var(--accent);
+		font-weight: 500;
+		opacity: 0.4;
+		transition: var(--transition);
+	}
+	&:focus::placeholder {
+		opacity: 0.7;
+	}
+}
+
+.form__button {
+	border-radius: 50%;
+	background: #E38C2D;
+	width: 60px;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	transition: var(--transition);
+
+	&:hover {
+		background: #8F8377;
+	}
+}
+
+.form__button-icon {
+	transition: var(--transition);
+}
+
+/* Если у данного класса, есть следующий класс, то иконка будет активна (описана в JS функция) */
+.form__button-icon.form__button-icon--active {
+	opacity: 1;
+}
+
+.weather__img {
+	width: 50%;
+	text-align: center;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+}
+
+.weather__temp {
+	font-size: 85px;
+	color: var(--white);
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.weather__city {
+	font-size: 32px;
+	text-align: center;
+	color: var(--white);
+	font-weight: 400;
+	margin-bottom: 50px;
+	text-wrap: balance;
+}
+
+.weather__details {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: auto;
+	gap: 20px;
+}
+
+.details {
+	display: flex;
+	align-items: center;
+	color: var(--white);
+	gap: 12px;
+	padding: 20px;
+	border-radius: 12px;
+	transition: var(--transition);
+
+	&:hover {
+		background: rgba(255, 255, 255, 0.3);
+	}
+}
+
+.details__img {
+	width: 40px;
+}
+
+.details__item {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+}
+
+.details__title {
+	font-weight: 600;
+	text-wrap: nowrap;
+}
+
+
+
+@media (max-width: 500px) {
+	.weather {
+		width: 90%;
+	}
+
+	.form__button {
+		width: 50px;
+		height: 50px;
+	}
+
+	.weather__temp {
+		font-size: 60px;
+	}
+
+	.weather__city {
+		font-size: 22px;
+		margin-bottom: 30px;
+	}
+
+	.weather__details {
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.details {
+		width: 100%;
+	}
+}
+
+@media (hover: hover) {
+	.form__button {
+		background: #E38C2D;
+	}
+}
+
+.sphere {
+	animation-name: sphereAnim;
+	animation-iteration-count: infinite;
+	transition: var(--transition);
+	animation-duration: 10s;
+	position: absolute;
+	z-index: -1;
+}
+
+/* @keyframes sphereAnim {
+	0% {
+		transform: translateY(400%);
+		opacity: 0.2
+	}
+
+	50% {
+		transform: translateY(-400%);
+		scale: 3;
+	}
+
+	100% {
+		transform: translateY(400%);
+		opacity: 0.2;
+	}
+} */

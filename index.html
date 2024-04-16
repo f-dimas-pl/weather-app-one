@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" /> -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
+</head>
+<body>
+
+
+
+
+
+
+    <div class="weather">
+        <form class="form" id="form">
+            <input class="form__input" type="text" placeholder="Введите местность">
+            <button class="form__button" type="submit">
+                <svg class="form__button-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z" fill="var(--white)"/>
+                </svg>                    
+            </button>
+        </form>
+
+        <div class="weather__info none">
+            <img class="weather__img" src="./img/weather/clear.png" alt="#">
+            <div class="weather__temp">***</div>
+            <div class="weather__city">***</div>
+        </div>
+
+        <div class="weather__details none">
+            <section class="details">
+                <img class="details__img" src="./img/ui/humidity.svg" alt="#">
+                <div class="details__item">
+                    <div class="details__value" id="humidity">***</div>
+                    <div class="details__title">Влажность</div>
+                </div>
+            </section>
+            <section class="details">
+                <img class="details__img" src="./img/ui/wind-speed.svg" alt="#">
+                <div class="details__item">
+                    <div class="details__value" id="speed">***</div>
+                    <div class="details__title">Скорость ветра</div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- <img class="sphere" src="./img/Sphere.png" alt="#"> -->
+
+
+
+
+
+
+
+
+
+    <script src="./js/main.js" type="module"></script>
+</body>
+</html>
